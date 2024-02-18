@@ -471,7 +471,7 @@
                                         </td>
                                     </tr>
 
-                                    <tr class="font-semibold">
+                                    <tr id="discount-row" class="font-semibold hidden">
                                         <td class="py-2">
                                             Discount
                                         </td>
@@ -484,13 +484,14 @@
 
                                         </td>
                                     </tr>
-                                    <tr class="font-semibold">
+                                    <tr id="coupon-row" class="font-semibold">
                                         <td colspan="3" class="">
                                             <div class="rounded-lg bg-white flex items-center p-2 font-inter">
-                                                <input id="coupon-input" class="outline-none px-1 flex-1 text-[14px]" type="text"
-                                                    placeholder="Have any coupon?">
-                                                <button class="rounded-lg bg-[#1DD100] text-white px-2 py-2"
-                                                    type="button" onclick="getCouponDiscount(event)">Apply</button>
+                                                <input id="coupon-input" class="outline-none px-1 flex-1 text-[14px]"
+                                                    type="text" placeholder="Have any coupon?">
+                                                <button id="btn-coupon"
+                                                    class="rounded-lg bg-[#1DD100] text-white px-2 py-2" type="button"
+                                                    disabled onclick="getCouponDiscount(event)">Apply</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -519,16 +520,17 @@
                             </div>
                             <div class="flex flex-col font-inter gap-2">
                                 <label class="text-base font-semibold" for="">Phone Number*</label>
-                                <input type="text" placeholder="Enter your name"
+                                <input onkeyup="validateForm()" id="phone-number" type="number"
+                                    placeholder="Enter your phone number"
                                     class="w-full outline-none border border-[#0307121A] rounded-xl px-2 py-4">
                             </div>
                             <div class="flex flex-col font-inter gap-2">
                                 <label class="text-base font-semibold" for="">Email ID</label>
-                                <input type="text" placeholder="Enter your name"
+                                <input type="email" placeholder="Enter your email id"
                                     class="w-full outline-none border border-[#0307121A] rounded-xl px-2 py-4">
                             </div>
                             <div class="w-full">
-                                <button type="button"
+                                <button onclick="onSubmit()" id="btn-next" disabled type="button"
                                     class="bg-[#1DD100] w-full text-white rounded-2xl px-6 py-4 font-bold text-[20px]">Next</button>
                             </div>
                         </div>
@@ -570,6 +572,24 @@
                     </div>
                 </div>
             </footer>
+
+
+            <dialog id="my_modal_1" class="modal">
+                <div class="modal-box w-[80%] flex flex-col items-center p-12 font-roboto">
+                    <img src="./assets/images/modal.png" class="w-[100px] h-[100px]" alt="">
+                    <h1 class="text-[#27AE60] font-bold text-lg">Success</h1>
+                    <p class="py-4 text-center font-medium">Thank you for Booking Our Bus Seats.
+                        We are working hard to find the best service and deals for you.</p>
+                    <p class="secondary-black">Shortly you will find a confirmation in your email.</p>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button
+                                class="bg-[#27AE60] text-white text-[20px] font-semibold px-8 py-3 rounded-3xl outline-none">Continue</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
 
 
         </section>

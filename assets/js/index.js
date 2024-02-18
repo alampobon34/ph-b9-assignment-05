@@ -13,6 +13,11 @@ function setInnerTextNumberById(id, value) {
     element.innerText = value;
 }
 
+function getInputFieldValueById(inputId) {
+    const value = document.getElementById(inputId).value.trim();
+    return value;
+}
+
 
 function appendNewRow(seat) {
     const element = document.getElementById('tbody');
@@ -47,12 +52,14 @@ for (const seat of allSeatList) {
         if (parseInt(totalSelectedSeat) < 4) {
             seat.style.backgroundColor = '#1DD100';
             seat.style.color = '#fff';
+            seat.disabled = true;
             const availableSeat = getInnerTextNumberById('available-seat');
             setInnerTextNumberById('available-seat', availableSeat - 1)
             const selectedSeat = getInnerTextNumberById('selected-seat');
             setInnerTextNumberById('selected-seat', selectedSeat + 1)
             totalSelectedSeat += 1;
             appendNewRow(seat);
+            document.getElementById('btn-coupon').disabled = false;
 
         } else {
             alert('Sorry You Can Not Select More Than 4.')
@@ -61,18 +68,62 @@ for (const seat of allSeatList) {
 }
 
 
+function calculateDiscountAndGrandTotal(total, discountValue) {
+    const discount = total * (discountValue / 100);
+    return discount;
+}
+
+function setActiveOrDeActiveButton(btnId, active) {
+    const btn = document.getElementById(btnId).disabled = active;
+}
+
+
 
 function getCouponDiscount(event) {
-    const inputValue = document.getElementById('coupon-input').value.trim();
+    const inputValue = getInputFieldValueById('coupon-input');
     if (inputValue) {
         if (inputValue.toUpperCase() === 'NEW15') {
-            console.log('NEW15')
+            document.getElementById('discount-row').classList.remove('hidden');
+            const total = getInnerTextNumberById('total');
+            const discountValue = calculateDiscountAndGrandTotal(total, 15);
+            setInnerTextNumberById('discount', discountValue);
+            setInnerTextNumberById('grand-total', total - discountValue);
+            setActiveOrDeActiveButton('btn-coupon', false);
+            const couponRow = document.getElementById('coupon-row').classList.add('hidden');
         } else if (inputValue.toUpperCase() === 'COUPLE 20') {
-            console.log('Couple 20');
-        }else{
+            document.getElementById('discount-row').classList.remove('hidden');
+            const total = getInnerTextNumberById('total');
+            const discountValue = calculateDiscountAndGrandTotal(total, 20);
+            setInnerTextNumberById('discount', discountValue);
+            setInnerTextNumberById('grand-total', total - discountValue);
+            setActiveOrDeActiveButton('btn-coupon', false);
+        } else {
             alert('Invalid Coupon.')
         }
     } else {
         alert('Please Enter The Coupon.')
     }
 }
+
+
+function validateForm() {
+    const phoneNumber = document.getElementById('phone-number').value;
+    if (phoneNumber && totalSelectedSeat > 0) {
+        setActiveOrDeActiveButton('btn-next', false);
+    }
+}
+
+
+function onSubmit() {
+    const numberValue = getInputFieldValueById('phone-number');
+    if (numberValue.length !== 11) {
+        console.log(numberValue);
+        alert('Phone number must be 11 digits.')
+    } else {
+        console.log('submit form');
+        document.getElementById('my_modal_1').showModal();
+    }
+}
+
+
+// document.getElementById('my_modal_1').showModal();
