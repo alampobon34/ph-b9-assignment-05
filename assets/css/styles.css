@@ -30,3 +30,8 @@ body {
 .secondary-black {
     color: var(--secondary-black);
 }
+
+
+.bg-green{
+    background-color: var(--primary-color);
+}
