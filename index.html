@@ -13,14 +13,251 @@
 </head>
 
 <body>
-
     <header>
-        <nav>
-
+        <nav class="container mx-auto px-5 lg:px-[135px]">
+            <div class="navbar px-0 py-3 lg:py-6">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a class="">Home</a></li>
+                            <li><a class="">About</a></li>
+                            <li><a class="">Destination</a></li>
+                            <li><a class="">Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="text-2xl lg:text-3xl font-extrabold ml-2 text-[#030712]">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu-horizontal px-1 flex items-center justify-between gap-11">
+                        <li><a class="">Home</a></li>
+                        <li><a class="">About</a></li>
+                        <li><a class="">Destination</a></li>
+                        <li><a class="">Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end flex justify-end items-center gap-4">
+                    <a
+                        class="px-[17px] py-2 text-lg font-bold rounded-xl cursor-pointer text-[#1DD100] bg-[#1DD1001A] lg:py-4 lg:px-[30px] lg:text-xl flex items-center gap-2 border border-[#1DD100]">
+                        Bus
+                        <img src="./assets/images/bus-icon.svg" alt="icon">
+                    </a>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
+        <!-- hero section  -->
+        <section class="container mx-auto px-5 lg:px-[135px] relative">
+            <div class="hero h-[550px] rounded-[32px]"
+                style="background-image: url('./assets/images/Rectangle\ 3.png');">
+                <div class="hero-overlay bg-opacity-60 rounded-[32px]"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="">
+                        <h1 class="mb-5 text-5xl font-bold">End-to-End Travel with <br><span class="text-[#1DD100]">P
+                                Paribahan</span></h1>
+                        <p class="mb-5">Yes, you can run unit tests and view the results directly within the app.
+                            The<br>
+                            integrated testing features allow for a streamlined.</p>
+                        <button class="bg-[#1DD100] text-[#030712] px-[30px] py-[21px] rounded-xl font-bold">Buy
+                            Tickets</button>
+                    </div>
+                </div>
+            </div>
+            <div class="-mt-[8%]">
+                <div class="flex items-center justify-center gap-[23px]">
+                    <div
+                        class="flex items-center gap-4 rounded-3xl border-b-[3px] border-[#1DD100] px-8 py-[37px] max-w-[308px] bg-white">
+                        <img src="./assets/images/tabler-icon-users-group.svg" alt="">
+                        <div>
+                            <h1 class="primary-black font-bold text-3xl font-inter">500K+</h1>
+                            <p class="text-[18px] secondary-black">Registered users</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 rounded-3xl border-b-[3px] border-[#1DD100] px-8 py-[37px] max-w-[308px] bg-white">
+                        <img src="./assets/images/tabler-icon-ticket.svg" alt="">
+                        <div>
+                            <h1 class="primary-black font-bold text-3xl font-inter">1.7 lacks</h1>
+                            <p class="text-[18px] secondary-black">Tickets sold</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 rounded-3xl border-b-[3px] border-[#1DD100] px-8 py-[37px] max-w-[308px] bg-white">
+                        <img src="./assets/images/tabler-icon-bus-stop.svg" alt="">
+                        <div>
+                            <h1 class="primary-black font-bold text-3xl font-inter">80K+</h1>
+                            <p class="text-[18px] secondary-black">Rental partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- coupon card section  -->
+
+        <!-- <section class="container mx-auto px-5 lg:px-[135px]">
+            <h1 class="mb-10">Best offers for you</h1>
+            <div class="flex ">
+                <div class="bg-[#FFBF0F] h-[220px] w-[573px] relative rounded-2xl">
+                    <div>
+                        <h1>15% OFF</h1>
+                        <p>on your next purchase</p>
+                        <p>by january 2024</p>
+                    </div>
+                    <div class="w-14 h-14 rounded-full bg-white absolute left-[50%] -top-[12%]">
+                    </div>
+                    <div class="absolute left-[55%] border-dashed border-2 h-full divide-y-2 border-white">
+                    </div>
+                    <div class="w-14 h-14 rounded-full bg-white absolute left-[50%] -bottom-[12%]">
+                    </div>
+                    <div>
+                        <h1>NEW15</h1>
+                        <p>Coupon Code</p>
+                    </div>
+                </div>
+
+                <div class="bg-[#F78C9C] h-[220px] w-[573px] relative rounded-2xl">
+                    <div class="w-14 h-14 rounded-full bg-white absolute left-[50%] -top-[12%]">
+                    </div>
+                    <div class="absolute left-[55%] border-dashed border-2 h-full divide-y-2 border-white">
+                    </div>
+                    <div class="w-14 h-14 rounded-full bg-white absolute left-[50%] -bottom-[12%]">
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="container mx-auto px-5 lg:px-[135px] mt-[120px]">
+            <h1 class="text-[40px] font-bold primary-black mb-12 text-center">Best offers for you</h1>
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="w-full md:w-1/2 flex bg-[#FFBF0F] rounded-3xl">
+                    <div class="w-[55%] p-10">
+                        <div class="">
+                            <h1 class="uppercase text-[40px] font-bold">15% OFF</h1>
+                            <p class="font-semibold text-[20px]">on your purchase</p>
+                            <p class="text-[18px] secondary-black">use by january 2024</p>
+                        </div>
+                    </div>
+                    <div class="w-[48px] py-[35px] relative overflow-hidden">
+                        <div class="absolute top-[-24px] h-[48px] w-full rounded-full bg-[#F7F8F8]"></div>
+                        <div class="w-[1px] h-full border-l-2 border-dashed border-white m-auto"></div>
+                        <div class="absolute bottom-[-24px] h-[48px] w-full rounded-full bg-[#F7F8F8]"></div>
+                    </div>
+                    <div class="flex-1 flex justify-center items-center">
+                        <div class="font-raleway">
+                            <h1 class="text-2xl font-bold">NEW15</h1>
+                            <p class="text-[20px] secondary-black">Coupon Code</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 flex bg-[#F78C9C] rounded-3xl">
+                    <div class="w-[55%] p-10">
+                        <div class="">
+                            <h1 class="uppercase text-[40px] font-bold">20% OFF</h1>
+                            <p class="font-semibold text-[20px]">on your purchase</p>
+                            <p class="text-[18px] secondary-black">use by january 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="w-[48px] py-[35px] relative overflow-hidden">
+                        <div class="absolute top-[-24px] h-[48px] w-full rounded-full bg-[#F7F8F8]"></div>
+                        <div class="w-[1px] h-full border-l-2 border-dashed border-white m-auto"></div>
+                        <div class="absolute bottom-[-24px] h-[48px] w-full rounded-full bg-[#F7F8F8]"></div>
+                    </div>
+                    <div class="flex-1 flex justify-center items-center">
+                        <div class="font-raleway">
+                            <h1 class="text-2xl font-bold">Couple 20</h1>
+                            <p class="text-[20px] secondary-black">Coupon Code</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <button type="button"
+                    class="mt-14 px-[17px] py-2 text-lg font-bold rounded-xl cursor-pointer text-[#1DD100] lg:py-4 lg:px-[30px] lg:text-xl flex items-center gap-2 border border-[#1DD100]">See
+                    All Offers</button>
+            </div>
+        </section>
+
+        <section class="mt-[120px] bg-[#F7F8F8] rounded-t-[88px] border-2 border-t-[#1DD100]">
+            <div class="container mx-auto px-5 lg:px-[135px] mt-[120px]">
+                <div class="text-center">
+                    <h1 class="text-[40px] font-bold primary-black">P.H Paribahan</h1>
+                    <p>Yes, you can run unit tests and view the results directly within the app. The integrated<br>
+                        testing
+                        features allow for a streamlined.</p>
+                </div>
+                <div class="bg-white rounded-3xl">
+                    <div class="flex mb-10 rounded-l-3xl">
+                        <div class="w-[60%] md:w-[70%] p-8 flex flex-col gap-6">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <img class="w-12 h-12" src="./assets/images/bus.svg" alt="">
+                                    <div>
+                                        <h3 class="text-2xl font-bold">Greenline Paribahan</h3>
+                                        <p class="text-sm font-inter secondary-black">Coach-009-WEB ! AC_Business</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 bg-[#1DD10026] w-[180px] rounded-xl p-[17px]">
+                                    <img src="./assets/images/seat-green.svg" alt="">
+                                    <div class="flex items-center font-inter gap-1 text-[#1DD100]">
+                                        <h1>40</h1>
+                                        <h1>Seats left</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#F7F8F8] p-8 rounded-3xl">
+                                <div class="flex justify-between items-center border-b-2 border-dashed py-4">
+                                    <p class="font-semibold secondary-black">Route</p>
+                                    <p class="font-semibold">Dhaka - Sylhet</p>
+                                </div>
+                                <div class="flex justify-between items-center border-b-2 border-dashed py-4">
+                                    <p class="font-semibold secondary-black">Departure Time</p>
+                                    <p class="font-semibold">9:00 PM</p>
+                                </div>
+
+                                <div class="py-4 flex flex-wrap gap-4 font-inter text-[16px]">
+                                    <button class="rounded-xl bg-[#0307120D] p-3" type="button">Boarding Point -
+                                        Laxmipur</button>
+                                    <button class="rounded-xl bg-[#0307120D] p-3" type="button">Dropping Point -
+                                        Bogura</button>
+                                    <button class="rounded-xl bg-[#0307120D] p-3" type="button">Est. Time - 11
+                                        Hour</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[80px] py-[65px] relative overflow-hidden border-dashed border-2">
+                            <div class="absolute top-[-40px] h-[80px] w-full rounded-full bg-[#F7F8F8]"></div>
+                            <div class="w-[1px] h-full border-l-2 border-dashed border-[#1DD100] m-auto"></div>
+                            <div class="absolute bottom-[-40px] h-[80px] w-full rounded-full bg-[#F7F8F8]"></div>
+                        </div>
+
+                        <div class="flex-1 rounded-r-3xl">
+                            <div class="flex flex-col justify-center items-center h-full w-full">
+                                <img src="./assets/images/taka.svg" alt="">
+                                <h1 class="text-[40px] font-bold ">550 Taka</h1>
+                                <p class="text-base font-semibold secondary-black">Per Seat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
 
     </main>
 
