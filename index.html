@@ -72,8 +72,8 @@
                     </div>
                 </div>
             </div>
-            <div class="-mt-[8%]">
-                <div class="flex items-center justify-center gap-[23px]">
+            <div class="md:-mt-[8%]">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-[23px]">
                     <div
                         class="flex items-center gap-4 rounded-3xl border-b-[3px] border-[#1DD100] px-8 py-[37px] max-w-[308px] bg-white">
                         <img src="./assets/images/tabler-icon-users-group.svg" alt="">
@@ -158,7 +158,7 @@
         </section>
 
         <!-- bus information and ticket information section  -->
-        <section class="mt-[120px] bg-[#F7F8F8] rounded-t-[88px] border-2 border-t-[#1DD100]">
+        <section class="mt-[120px] bg-[#F7F8F8] rounded-l-[88px] rounded-r-[88px] border-2 border-t-[#1DD100]">
             <div class="container mx-auto px-5 lg:px-[135px] mt-[120px]">
                 <div class="text-center">
                     <h1 class="text-[40px] font-bold primary-black">P.H Paribahan</h1>
@@ -169,15 +169,17 @@
                 <div class="bg-white rounded-3xl">
                     <div class="flex mb-10 rounded-l-3xl">
                         <div class="w-[60%] md:w-[70%] p-8 flex flex-col gap-6">
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center gap-3">
+                            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4">
+                                <div class="flex flex-col lg:flex-row lg:items-center gap-3">
                                     <img class="w-12 h-12" src="./assets/images/bus.svg" alt="">
                                     <div>
                                         <h3 class="text-2xl font-bold">Greenline Paribahan</h3>
-                                        <p class="text-sm font-inter secondary-black">Coach-009-WEB ! AC_Business</p>
+                                        <p class="text-sm font-inter secondary-black">Coach-009-WEB !
+                                            AC_Business</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2 bg-[#1DD10026] w-[180px] rounded-xl p-[17px]">
+                                <div
+                                    class="flex items-center gap-2 bg-[#1DD10026] lg:w-[180px] rounded-xl p-[17px] w-full">
                                     <img src="./assets/images/seat-green.svg" alt="">
                                     <div class="flex items-center font-inter gap-1 text-[#1DD100]">
                                         <h1>40</h1>
@@ -197,11 +199,14 @@
                                 </div>
 
                                 <div class="py-4 flex flex-wrap gap-4 font-inter text-[16px]">
-                                    <button class="rounded-xl bg-[#0307120D] p-3" type="button">Boarding Point -
+                                    <button class="rounded-xl bg-[#0307120D] py-3 px-3 w-full lg:w-auto"
+                                        type="button">Boarding Point -
                                         Laxmipur</button>
-                                    <button class="rounded-xl bg-[#0307120D] p-3" type="button">Dropping Point -
+                                    <button class="rounded-xl bg-[#0307120D] py-3 px-3 w-full lg:w-auto"
+                                        type="button">Dropping Point -
                                         Bogura</button>
-                                    <button class="rounded-xl bg-[#0307120D] p-3" type="button">Est. Time - 11
+                                    <button class="rounded-xl bg-[#0307120D] py-3 px-3 w-full lg:w-auto"
+                                        type="button">Est. Time - 11
                                         Hour</button>
                                 </div>
                             </div>
@@ -212,17 +217,19 @@
                             <div class="absolute bottom-[-40px] h-[80px] w-full rounded-full bg-[#F7F8F8]"></div>
                         </div>
 
-                        <div class="flex-1 rounded-r-3xl">
-                            <div class="flex flex-col justify-center items-center h-full w-full">
-                                <img src="./assets/images/taka.svg" alt="">
-                                <h1 class="text-[40px] font-bold ">550 Taka</h1>
+                        <div class="flex-1 rounded-r-3xl flex justify-center items-center">
+                            <div class="flex flex-col items-center justify-center">
+                                <div>
+                                    <img src="./assets/images/taka.svg" alt="">
+                                </div>
+                                <h1 class="text-[40px] font-bold text-center">550 Taka</h1>
                                 <p class="text-base font-semibold secondary-black">Per Seat</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="bg-white rounded-3xl flex flex-col md:flex-row p-8">
-                    <div class="w-full md:w-[55%] pr-8 flex flex-col">
+                    <div class="w-full md:w-[55%] lg:pr-8 flex flex-col">
                         <div class="py-4 border-b-2 border-dashed">
                             <h1>Select Your Seat</h1>
                         </div>
@@ -421,7 +428,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full md:w-[45%] border-l-2 border-dashed pl-8 flex flex-col gap-6">
+                    <div class="w-full md:w-[45%] lg:border-l-2 lg:border-dashed lg:pl-8 flex flex-col gap-6">
                         <div class="py-4 border-b-2 border-dashed">
                             <h1>Select Your Seat</h1>
                         </div>
@@ -532,6 +539,36 @@
                     </div>
                 </div>
             </div>
+
+
+            <footer class="bg-black mt-[120px]">
+                <div class="container mx-auto px-5 lg:px-[135px] py-[120px] flex flex-col gap-6">
+                    <div class="text-white flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0">
+                        <div class="flex flex-col items-center lg:items-start gap-4">
+                            <h1 class="text-3xl font-bold">P-Ticket</h1>
+                            <p class="text-[#FFFFFFCC] text-center lg:text-start">P-Ticket is a digital platform to make
+                                your<br> daily commuting
+                                better.</p>
+                        </div>
+
+                        <div class="flex flex-col items-center lg:items-end gap-4">
+                            <h1>Download our app</h1>
+                            <img class="w-[189px] h-[56px]" src="./assets/images/playstore.png" alt="">
+                        </div>
+                    </div>
+                    <hr class="border border-dashed">
+
+                    <div class="flex flex-col lg:flex-row justify-between items-center gap-2">
+                        <p class="text-[#FFFFFFCC]">@all rights reserved, P-Ticket services limited.2024</p>
+
+                        <div class="text-white flex flex-col lg:flex-row gap-2 justify-between items-center">
+                            <p>Terms & condition</p>
+                            <p>Return & refund policy</p>
+                            <p>Privacy policy</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
 
         </section>
