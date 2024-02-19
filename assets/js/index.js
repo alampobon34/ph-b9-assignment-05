@@ -1,5 +1,6 @@
 const allSeatList = document.getElementsByClassName('btn-seat');
 let totalSelectedSeat = 0;
+let canAdd = true;
 
 function getInnerTextNumberById(id) {
     const element = document.getElementById(id).innerText;
@@ -27,23 +28,36 @@ function setActiveOrDeActiveButton(btnId, active) {
     const btn = document.getElementById(btnId).disabled = active;
 }
 
+function addClassById(id, className) {
+    const btn = document.getElementById(id).classList.add(className);
+}
+
+function removeClassById(id, className) {
+    const btn = document.getElementById(id).classList.remove(className);
+}
+
 
 for (const seat of allSeatList) {
     seat.addEventListener('click', function () {
-        if (parseInt(totalSelectedSeat) < 4) {
-            seat.style.backgroundColor = '#1DD100';
-            seat.style.color = '#fff';
-            seat.disabled = true;
-            const availableSeat = getInnerTextNumberById('available-seat');
-            setInnerTextNumberById('available-seat', availableSeat - 1)
-            const selectedSeat = getInnerTextNumberById('selected-seat');
-            setInnerTextNumberById('selected-seat', selectedSeat + 1)
-            totalSelectedSeat += 1;
-            appendNewRow(seat);
-            document.getElementById('btn-coupon').disabled = false;
+        if (canAdd) {
+            if (parseInt(totalSelectedSeat) < 4) {
+                seat.style.backgroundColor = '#1DD100';
+                seat.style.color = '#fff';
+                seat.disabled = true;
+                const availableSeat = getInnerTextNumberById('available-seat');
+                setInnerTextNumberById('available-seat', availableSeat - 1)
+                const selectedSeat = getInnerTextNumberById('selected-seat');
+                setInnerTextNumberById('selected-seat', selectedSeat + 1)
+                totalSelectedSeat += 1;
+                appendNewRow(seat);
+                document.getElementById('btn-coupon').disabled = false;
+                removeClassById('btn-coupon', 'opacity-60');
 
+            } else {
+                alert('Sorry You Can Not Select More Than 4.')
+            }
         } else {
-            alert('Sorry You Can Not Select More Than 4.')
+            alert('Your cannot add more ticket. Because your already added coupon code.');
         }
     })
 }
@@ -84,21 +98,23 @@ function getCouponDiscount(event) {
     const inputValue = getInputFieldValueById('coupon-input');
     if (inputValue) {
         if (inputValue.toUpperCase() === 'NEW15') {
-            document.getElementById('discount-row').classList.remove('hidden');
+            removeClassById('discount-row', 'hidden');
             const total = getInnerTextNumberById('total');
             const discountValue = calculateDiscountAndGrandTotal(total, 15);
             setInnerTextNumberById('discount', discountValue);
             setInnerTextNumberById('grand-total', total - discountValue);
             setActiveOrDeActiveButton('btn-coupon', false);
-            const couponRow = document.getElementById('coupon-row').classList.add('hidden');
+            addClassById('coupon-row', 'hidden');
+            canAdd = false;
         } else if (inputValue.toUpperCase() === 'COUPLE 20') {
-            document.getElementById('discount-row').classList.remove('hidden');
+            removeClassById('discount-row', 'hidden');
             const total = getInnerTextNumberById('total');
             const discountValue = calculateDiscountAndGrandTotal(total, 20);
             setInnerTextNumberById('discount', discountValue);
             setInnerTextNumberById('grand-total', total - discountValue);
             setActiveOrDeActiveButton('btn-coupon', false);
-            const couponRow = document.getElementById('coupon-row').classList.add('hidden');
+            addClassById('coupon-row', 'hidden');
+            canAdd = false;
         } else {
             alert('Invalid Coupon.')
         }
@@ -112,6 +128,7 @@ function validateForm() {
     const phoneNumber = document.getElementById('phone-number').value;
     if (phoneNumber && totalSelectedSeat > 0) {
         setActiveOrDeActiveButton('btn-next', false);
+        removeClassById('btn-next', 'opacity-60');
     }
 }
 
