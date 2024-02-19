@@ -50,8 +50,10 @@ for (const seat of allSeatList) {
                 setInnerTextNumberById('selected-seat', selectedSeat + 1)
                 totalSelectedSeat += 1;
                 appendNewRow(seat);
-                document.getElementById('btn-coupon').disabled = false;
-                removeClassById('btn-coupon', 'opacity-60');
+                if (totalSelectedSeat === 4) {
+                    document.getElementById('btn-coupon').disabled = false;
+                    removeClassById('btn-coupon', 'opacity-60');
+                }
 
             } else {
                 alert('Sorry You Can Not Select More Than 4.')
@@ -97,7 +99,7 @@ function appendNewRow(seat) {
 function getCouponDiscount(event) {
     const inputValue = getInputFieldValueById('coupon-input');
     if (inputValue) {
-        if (inputValue.toUpperCase() === 'NEW15') {
+        if (inputValue === 'NEW15') {
             removeClassById('discount-row', 'hidden');
             const total = getInnerTextNumberById('total');
             const discountValue = calculateDiscountAndGrandTotal(total, 15);
@@ -106,7 +108,7 @@ function getCouponDiscount(event) {
             setActiveOrDeActiveButton('btn-coupon', false);
             addClassById('coupon-row', 'hidden');
             canAdd = false;
-        } else if (inputValue.toUpperCase() === 'COUPLE 20') {
+        } else if (inputValue === 'Couple 20') {
             removeClassById('discount-row', 'hidden');
             const total = getInnerTextNumberById('total');
             const discountValue = calculateDiscountAndGrandTotal(total, 20);
