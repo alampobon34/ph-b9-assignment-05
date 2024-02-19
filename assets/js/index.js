@@ -18,32 +18,13 @@ function getInputFieldValueById(inputId) {
     return value;
 }
 
+function calculateDiscountAndGrandTotal(total, discountValue) {
+    const discount = total * (discountValue / 100);
+    return discount;
+}
 
-function appendNewRow(seat) {
-    const element = document.getElementById('tbody');
-    let row = document.createElement("tr")
-
-    let c1 = document.createElement("td")
-    let c2 = document.createElement("td")
-    let c3 = document.createElement("td")
-
-    c1.innerText = seat.innerText;
-    c1.classList.add('text-left')
-    c2.innerText = "Economy"
-    c2.classList.add('text-left');
-    c3.innerText = 550
-    c3.classList.add('text-right')
-
-    row.appendChild(c1);
-    row.appendChild(c2);
-    row.appendChild(c3);
-    table.appendChild(row)
-
-    const total = getInnerTextNumberById('total');
-    const newTotal = total + 550;
-    setInnerTextNumberById('total', newTotal);
-    setInnerTextNumberById('grand-total', newTotal);
-
+function setActiveOrDeActiveButton(btnId, active) {
+    const btn = document.getElementById(btnId).disabled = active;
 }
 
 
@@ -68,15 +49,35 @@ for (const seat of allSeatList) {
 }
 
 
-function calculateDiscountAndGrandTotal(total, discountValue) {
-    const discount = total * (discountValue / 100);
-    return discount;
-}
+function appendNewRow(seat) {
+    const element = document.getElementById('tbody');
+    let row = document.createElement("tr")
 
-function setActiveOrDeActiveButton(btnId, active) {
-    const btn = document.getElementById(btnId).disabled = active;
-}
+    let c1 = document.createElement("td")
+    let c2 = document.createElement("td")
+    let c3 = document.createElement("td")
 
+    c1.innerText = seat.innerText;
+    c1.classList.add('text-left')
+    c1.classList.add('secondary-black')
+    c2.innerText = "Economy"
+    c2.classList.add('text-left');
+    c2.classList.add('secondary-black');
+    c3.innerText = 550
+    c3.classList.add('text-right')
+    c3.classList.add('secondary-black')
+
+    row.appendChild(c1);
+    row.appendChild(c2);
+    row.appendChild(c3);
+    table.appendChild(row)
+
+    const total = getInnerTextNumberById('total');
+    const newTotal = total + 550;
+    setInnerTextNumberById('total', newTotal);
+    setInnerTextNumberById('grand-total', newTotal);
+
+}
 
 
 function getCouponDiscount(event) {
@@ -97,6 +98,7 @@ function getCouponDiscount(event) {
             setInnerTextNumberById('discount', discountValue);
             setInnerTextNumberById('grand-total', total - discountValue);
             setActiveOrDeActiveButton('btn-coupon', false);
+            const couponRow = document.getElementById('coupon-row').classList.add('hidden');
         } else {
             alert('Invalid Coupon.')
         }
@@ -125,5 +127,3 @@ function onSubmit() {
     }
 }
 
-
-// document.getElementById('my_modal_1').showModal();
