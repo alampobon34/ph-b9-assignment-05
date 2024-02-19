@@ -146,3 +146,8 @@ function onSubmit() {
     }
 }
 
+
+function reloadPage() {
+    window.location.reload();
+}
+
